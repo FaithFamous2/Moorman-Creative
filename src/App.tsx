@@ -1408,10 +1408,12 @@ function AppContent() {
   const path = window.location.pathname
   const basePath = '/' + path.split('/')[1]
   const currentPage: Page = pageMap[basePath] || 'home'
+  const routeProjectId = path.match(/^\/work\/details\/([^/]+)\/?$/)?.[1]
+  const routeProject = PROJECTS.find((project) => project.id === routeProjectId)
 
   const renderPage = () => {
     if (basePath === '/work' && path.includes('/details/')) {
-      return <ProjectDetailPage projectId={activeProject} setPage={nav} lang={lang} />
+      return <ProjectDetailPage projectId={routeProject?.id ?? activeProject} setPage={nav} lang={lang} />
     }
     switch (basePath) {
       case '/': return <HomePage setPage={nav} setActiveProject={setActiveProject} lang={lang} />
