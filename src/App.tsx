@@ -532,37 +532,17 @@ function HomePage({ setPage, setActiveProject, lang }: { setPage: (p: Page) => v
 
         {/* Wordmark overlay */}
         <motion.div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none" style={{ opacity: heroTextOpacity, y: heroTextY }}>
-          <div className="text-center px-4">
-            <motion.div className="font-mono tracking-[0.35em] uppercase mb-6 block" style={{ fontSize: 'clamp(0.6rem, 1vw, 0.75rem)', color: 'rgba(200,169,122,0.7)' }} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4, ease: EASE }}>
-              {tx.heroTag}
-            </motion.div>
-            <div style={{ overflow: 'hidden' }}>
-              <motion.h1 className="font-serif tracking-tight" style={{ fontSize: 'clamp(3.5rem, 10vw, 10rem)', color: '#F4F1EA', lineHeight: 0.9, letterSpacing: '-0.02em' }} initial={{ y: '100%' }} animate={{ y: 0 }} transition={{ duration: 1.1, delay: 0.1, ease: EASE }}>
-                Moorman
-              </motion.h1>
-            </div>
-            <div style={{ overflow: 'hidden' }}>
-              <motion.h1 className="font-serif italic tracking-tight" style={{ fontSize: 'clamp(3.5rem, 10vw, 10rem)', color: '#F4F1EA', lineHeight: 0.9, letterSpacing: '-0.02em' }} initial={{ y: '100%' }} animate={{ y: 0 }} transition={{ duration: 1.1, delay: 0.22, ease: EASE }}>
-                Creative.
-              </motion.h1>
-            </div>
-            <motion.div className="mx-auto my-8 h-px" style={{ background: 'rgba(200,169,122,0.35)', maxWidth: '120px' }} initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.8, delay: 0.9, ease: EASE }} />
-            <motion.p className="font-mono uppercase tracking-[0.2em]" style={{ fontSize: 'clamp(0.6rem, 1.2vw, 0.8rem)', color: 'rgba(244,241,234,0.45)' }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.9, delay: 1.1, ease: EASE }}>
-              {lang === 'en' ? 'Shaping the Future of Moving Image' : 'De Toekomst van Bewegend Beeld Vormgeven'}
-            </motion.p>
+          <div className="w-full overflow-hidden px-4 md:px-8 text-center">
+            <motion.h1
+              className="font-serif whitespace-nowrap"
+              style={{ fontSize: 'clamp(2.55rem, 9vw, 9rem)', color: '#F4F1EA', lineHeight: 0.9, letterSpacing: '-0.045em' }}
+              initial={{ y: '115%', opacity: 0, filter: 'blur(10px)' }}
+              animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+              transition={{ duration: 1.35, delay: 0.15, ease: EASE }}
+            >
+              Moorman Creative
+            </motion.h1>
           </div>
-        </motion.div>
-
-        <motion.div className="absolute bottom-10 left-8 z-20 flex items-center gap-4" initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9, delay: 1.3, ease: EASE }}>
-          <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#C8A97A' }} />
-          <span className="font-mono text-[9px] tracking-[0.3em] uppercase" style={{ color: 'rgba(244,241,234,0.35)' }}>{tx.heroBadge}</span>
-        </motion.div>
-
-        <motion.div className="absolute bottom-10 right-8 z-20 flex flex-col items-center gap-2" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.5 }}>
-          <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }} className="flex flex-col items-center gap-2">
-            <span className="font-mono text-[9px] tracking-[0.3em] uppercase" style={{ color: 'rgba(244,241,234,0.25)' }}>{tx.heroScroll}</span>
-            <div className="w-px h-10" style={{ background: 'linear-gradient(to bottom, rgba(200,169,122,0.5), transparent)' }} />
-          </motion.div>
         </motion.div>
       </section>
 
