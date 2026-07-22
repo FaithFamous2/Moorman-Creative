@@ -315,7 +315,7 @@ function ZoomCard({ children, className = '' }: { children: React.ReactNode; cla
 
 function Tag({ children }: { children: React.ReactNode }) {
   return (
-    <span className="font-mono text-[10px] tracking-[0.2em] uppercase px-3 py-1 rounded-full border" style={{ borderColor: 'rgba(200,169,122,0.25)', color: '#C8A97A', background: 'rgba(200,169,122,0.06)' }}>
+    <span className="font-mono text-[10px] tracking-[0.2em] uppercase px-3 py-1 rounded-full border" style={{ borderColor: 'rgba(139,92,246,0.25)', color: '#A78BFA', background: 'rgba(139,92,246,0.06)' }}>
       {children}
     </span>
   )
@@ -360,20 +360,20 @@ function Nav({ page, setPage, lang, setLang }: { page: Page; setPage: (p: Page) 
 
       <div className="hidden md:flex items-center gap-8">
         {links.map((l) => (
-          <button key={l.page} onClick={() => go(l.page)} className="relative font-mono text-[11px] tracking-[0.2em] uppercase transition-colors duration-300" style={{ color: page === l.page ? '#C8A97A' : 'rgba(244,241,234,0.45)' }}>
+          <button key={l.page} onClick={() => go(l.page)} className="relative font-mono text-[11px] tracking-[0.2em] uppercase transition-colors duration-300" style={{ color: page === l.page ? '#A78BFA' : 'rgba(244,241,234,0.45)' }}>
             {l.label}
-            {page === l.page && <motion.span layoutId="nav-indicator" className="absolute -bottom-1 left-0 right-0 h-px" style={{ background: '#C8A97A' }} transition={{ duration: 0.3 }} />}
+            {page === l.page && <motion.span layoutId="nav-indicator" className="absolute -bottom-1 left-0 right-0 h-px" style={{ background: '#A78BFA' }} transition={{ duration: 0.3 }} />}
           </button>
         ))}
 
         {/* Language toggle */}
-        <div className="flex items-center rounded-full overflow-hidden border" style={{ borderColor: 'rgba(200,169,122,0.2)' }}>
+        <div className="flex items-center rounded-full overflow-hidden border" style={{ borderColor: 'rgba(139,92,246,0.2)' }}>
           {(['en', 'nl'] as Lang[]).map((l) => (
             <button
               key={l}
               onClick={() => setLang(l)}
               className="font-mono text-[10px] tracking-[0.15em] uppercase px-3 py-1.5 transition-all duration-300"
-              style={{ background: lang === l ? 'rgba(200,169,122,0.15)' : 'transparent', color: lang === l ? '#C8A97A' : 'rgba(244,241,234,0.35)' }}
+              style={{ background: lang === l ? 'rgba(139,92,246,0.15)' : 'transparent', color: lang === l ? '#A78BFA' : 'rgba(244,241,234,0.35)' }}
             >
               {l.toUpperCase()}
             </button>
@@ -383,9 +383,9 @@ function Nav({ page, setPage, lang, setLang }: { page: Page; setPage: (p: Page) 
         <button
           onClick={() => go('contact')}
           className="font-mono text-[11px] tracking-[0.2em] uppercase px-5 py-2.5 rounded-full transition-all duration-300 border"
-          style={{ borderColor: 'rgba(200,169,122,0.35)', color: '#C8A97A', background: 'rgba(200,169,122,0.06)' }}
-          onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(200,169,122,0.14)' }}
-          onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(200,169,122,0.06)' }}
+          style={{ borderColor: 'rgba(139,92,246,0.35)', color: '#A78BFA', background: 'rgba(139,92,246,0.06)' }}
+          onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(139,92,246,0.14)' }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(139,92,246,0.06)' }}
         >
           {tx.navBook}
         </button>
@@ -406,7 +406,7 @@ function Nav({ page, setPage, lang, setLang }: { page: Page; setPage: (p: Page) 
             ))}
             <div className="flex gap-3 pt-2 border-t" style={{ borderColor: '#1F1F1F' }}>
               {(['en', 'nl'] as Lang[]).map((l) => (
-                <button key={l} onClick={() => setLang(l)} className="font-mono text-[10px] tracking-[0.15em] uppercase px-3 py-1.5 rounded-full border" style={{ borderColor: 'rgba(200,169,122,0.3)', background: lang === l ? 'rgba(200,169,122,0.15)' : 'transparent', color: lang === l ? '#C8A97A' : 'rgba(244,241,234,0.4)' }}>
+                <button key={l} onClick={() => setLang(l)} className="font-mono text-[10px] tracking-[0.15em] uppercase px-3 py-1.5 rounded-full border" style={{ borderColor: 'rgba(139,92,246,0.3)', background: lang === l ? 'rgba(139,92,246,0.15)' : 'transparent', color: lang === l ? '#A78BFA' : 'rgba(244,241,234,0.4)' }}>
                   {l.toUpperCase()}
                 </button>
               ))}
@@ -458,7 +458,7 @@ function PhilosophySection({ lang }: { lang: Lang }) {
             <div className="absolute bottom-10 left-10 z-10">
               <AnimatePresence mode="wait">
                 <motion.div key={activeStep} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -16 }} transition={{ duration: 0.5, ease: EASE }}>
-                  <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-2" style={{ color: 'rgba(200,169,122,0.8)' }}>{steps[activeStep].accent}</div>
+                  <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-2" style={{ color: 'rgba(139,92,246,0.8)' }}>{steps[activeStep].accent}</div>
                   <div className="font-serif" style={{ fontSize: 'clamp(5rem, 10vw, 9rem)', color: 'rgba(244,241,234,0.07)', lineHeight: 1 }}>{steps[activeStep].n}</div>
                 </motion.div>
               </AnimatePresence>
@@ -468,18 +468,18 @@ function PhilosophySection({ lang }: { lang: Lang }) {
           {/* Right: text */}
           <div className="flex flex-col justify-between h-full px-12 py-16 lg:py-20" style={{ background: '#0D0D0D' }}>
             <div>
-              <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-5" style={{ color: '#C8A97A' }}>{tx.philLabel}</div>
+              <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-5" style={{ color: '#A78BFA' }}>{tx.philLabel}</div>
               <h2 className="font-serif" style={{ fontSize: 'clamp(2rem, 3vw, 2.8rem)', color: '#F4F1EA', lineHeight: 1.05 }}>
                 {tx.philTitle1}<br /><em>{tx.philTitle2}</em>
               </h2>
             </div>
             <div className="flex flex-col gap-0">
               <div className="relative h-px mb-8" style={{ background: 'rgba(31,31,31,0.8)' }}>
-                <motion.div className="absolute left-0 top-0 h-full" style={{ width: progressBar, background: '#C8A97A' }} />
+                <motion.div className="absolute left-0 top-0 h-full" style={{ width: progressBar, background: '#A78BFA' }} />
               </div>
               {steps.map((step, i) => (
                 <motion.div key={step.n} className="flex gap-6 py-6" style={{ borderTop: '1px solid rgba(31,31,31,0.6)' }} animate={{ opacity: activeStep === i ? 1 : 0.3 }} transition={{ duration: 0.4 }}>
-                  <div className="font-serif flex-shrink-0 leading-none" style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', color: activeStep === i ? 'rgba(200,169,122,0.5)' : 'rgba(200,169,122,0.1)', transition: 'color 0.4s' }}>{step.n}</div>
+                  <div className="font-serif flex-shrink-0 leading-none" style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', color: activeStep === i ? 'rgba(139,92,246,0.5)' : 'rgba(139,92,246,0.1)', transition: 'color 0.4s' }}>{step.n}</div>
                   <div className="flex flex-col gap-2 pt-1 flex-1">
                     <div className="font-serif text-xl" style={{ color: '#F4F1EA' }}>{step.title}</div>
                     <motion.div animate={{ height: activeStep === i ? 'auto' : 0, opacity: activeStep === i ? 1 : 0 }} transition={{ duration: 0.5, ease: EASE }} style={{ overflow: 'hidden' }}>
@@ -490,7 +490,7 @@ function PhilosophySection({ lang }: { lang: Lang }) {
               ))}
             </div>
             <motion.div className="flex items-center gap-3" animate={{ opacity: activeStep === 2 ? 0 : 0.4 }} transition={{ duration: 0.4 }}>
-              <div className="w-px h-8" style={{ background: 'rgba(200,169,122,0.4)' }} />
+              <div className="w-px h-8" style={{ background: 'rgba(139,92,246,0.4)' }} />
               <span className="font-mono text-[9px] tracking-[0.3em] uppercase" style={{ color: 'rgba(244,241,234,0.4)' }}>{tx.philScrollHint}</span>
             </motion.div>
           </div>
@@ -518,16 +518,27 @@ function HomePage({ setPage, setActiveProject, lang }: { setPage: (p: Page) => v
       {/* ── FULL-BLEED HERO ── */}
       <section ref={heroRef} className="relative overflow-hidden" style={{ height: '100vh' }}>
         <motion.div className="absolute inset-0 w-full" style={{ y: heroBgY, scale: 1.12, transformOrigin: 'center center' }}>
-          <motion.img
-            src="https://images.unsplash.com/photo-1784117954870-6235e05b09e0?w=1200&q=75&auto=format&fit=crop"
-            alt="Moorman Creative cinematic hero"
-            className="w-full h-full object-cover"
+          <motion.video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            disablePictureInPicture
+            onCanPlay={(event) => {
+              event.currentTarget.play().catch(() => undefined)
+            }}
+            poster="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=1600&q=75&auto=format&fit=crop"
+            aria-label="Abstract purple and blue digital particle waves"
+            className="hero-ai-video w-full h-full object-cover"
             initial={{ scale: 1.08 }}
             animate={{ scale: 1 }}
             transition={{ duration: 2.5, ease: EASE }}
-          />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(13,13,13,0.55) 0%, rgba(13,13,13,0.1) 35%, rgba(13,13,13,0.2) 60%, rgba(13,13,13,0.88) 100%)' }} />
-          <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 100% 80% at 50% 50%, transparent 40%, rgba(13,13,13,0.5) 100%)' }} />
+          >
+            <source src="https://videos.pexels.com/video-files/29306492/12637575_1920_1080_30fps.mp4" type="video/mp4" />
+          </motion.video>
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(8,5,16,0.62) 0%, rgba(13,8,28,0.18) 38%, rgba(12,7,24,0.3) 62%, rgba(8,5,16,0.9) 100%)' }} />
+          <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 90% 65% at 50% 48%, rgba(168,85,247,0.1) 0%, transparent 46%, rgba(5,3,10,0.58) 100%)' }} />
         </motion.div>
 
         {/* Wordmark overlay */}
@@ -535,7 +546,16 @@ function HomePage({ setPage, setActiveProject, lang }: { setPage: (p: Page) => v
           <div className="w-full overflow-hidden px-4 md:px-8 text-center">
             <motion.h1
               className="font-serif whitespace-nowrap"
-              style={{ fontSize: 'clamp(2.55rem, 9vw, 9rem)', color: '#F4F1EA', lineHeight: 0.9, letterSpacing: '-0.045em' }}
+              style={{
+                fontSize: 'clamp(2.55rem, 9vw, 9rem)',
+                lineHeight: 0.9,
+                letterSpacing: '-0.045em',
+                backgroundImage: 'linear-gradient(105deg, #F4F1EA 8%, #DDD6FE 42%, #A78BFA 72%, #F0ABFC 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                filter: 'drop-shadow(0 12px 38px rgba(76,29,149,0.28))',
+              }}
               initial={{ y: '115%', opacity: 0, filter: 'blur(10px)' }}
               animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
               transition={{ duration: 1.35, delay: 0.15, ease: EASE }}
@@ -551,7 +571,7 @@ function HomePage({ setPage, setActiveProject, lang }: { setPage: (p: Page) => v
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16 items-start">
           <div>
             <FadeUp>
-              <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-8" style={{ color: '#C8A97A' }}>{tx.headlineTag}</div>
+              <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-8" style={{ color: '#A78BFA' }}>{tx.headlineTag}</div>
             </FadeUp>
             <h2 className="font-serif" style={{ fontSize: 'clamp(2.8rem, 5.5vw, 5rem)', color: '#F4F1EA', lineHeight: 0.95, letterSpacing: '-0.01em' }}>
               <SplitHeadline text={tx.headline1} delay={0} />
@@ -567,7 +587,7 @@ function HomePage({ setPage, setActiveProject, lang }: { setPage: (p: Page) => v
             </FadeUp>
             <FadeUp delay={0.4}>
               <div className="flex flex-wrap gap-4">
-                <button onClick={() => go('work')} className="font-mono text-[11px] tracking-[0.2em] uppercase px-7 py-4 rounded-full transition-all duration-300" style={{ background: '#F4F1EA', color: '#0D0D0D' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#C8A97A' }} onMouseLeave={(e) => { e.currentTarget.style.background = '#F4F1EA' }}>{tx.ctaWork}</button>
+                <button onClick={() => go('work')} className="font-mono text-[11px] tracking-[0.2em] uppercase px-7 py-4 rounded-full transition-all duration-300" style={{ background: '#F4F1EA', color: '#0D0D0D' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#A78BFA' }} onMouseLeave={(e) => { e.currentTarget.style.background = '#F4F1EA' }}>{tx.ctaWork}</button>
                 <button onClick={() => go('contact')} className="font-mono text-[11px] tracking-[0.2em] uppercase px-7 py-4 rounded-full transition-all duration-300 border" style={{ borderColor: 'rgba(244,241,234,0.2)', color: '#F4F1EA', background: 'transparent' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(244,241,234,0.5)' }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(244,241,234,0.2)' }}>{tx.ctaBook}</button>
               </div>
             </FadeUp>
@@ -604,7 +624,7 @@ function HomePage({ setPage, setActiveProject, lang }: { setPage: (p: Page) => v
         <FadeUp>
           <div className="luxury-home-work-header mb-16">
             <div>
-              <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-4" style={{ color: '#C8A97A' }}>{tx.workLabel}</div>
+              <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-4" style={{ color: '#A78BFA' }}>{tx.workLabel}</div>
               <h2 className="font-serif" style={{ fontSize: 'clamp(2.5rem, 4vw, 4rem)', color: '#F4F1EA', lineHeight: 1 }}>
                 {tx.workTitle1}<br /><em>{tx.workTitle2}</em>
               </h2>
@@ -630,7 +650,7 @@ function HomePage({ setPage, setActiveProject, lang }: { setPage: (p: Page) => v
           ))}
         </div>
         <FadeUp delay={0.3} className="flex justify-center mt-12">
-          <button onClick={() => go('work')} className="font-mono text-[11px] tracking-[0.2em] uppercase px-8 py-4 rounded-full transition-all duration-300 border" style={{ borderColor: 'rgba(200,169,122,0.3)', color: '#C8A97A', background: 'rgba(200,169,122,0.04)' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(200,169,122,0.1)' }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(200,169,122,0.04)' }}>
+          <button onClick={() => go('work')} className="font-mono text-[11px] tracking-[0.2em] uppercase px-8 py-4 rounded-full transition-all duration-300 border" style={{ borderColor: 'rgba(139,92,246,0.3)', color: '#A78BFA', background: 'rgba(139,92,246,0.04)' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(139,92,246,0.1)' }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(139,92,246,0.04)' }}>
             {tx.workViewAllBtn}
           </button>
         </FadeUp>
@@ -656,7 +676,7 @@ function ProjectCard({ project, onClick, large = false, lang, index }: { project
     <motion.div
       className="project-card relative overflow-hidden rounded-2xl cursor-pointer w-full h-full"
       style={{ border: '1px solid #1F1F1F', background: '#111111' }}
-      whileHover={{ borderColor: 'rgba(200,169,122,0.25)' }}
+      whileHover={{ borderColor: 'rgba(139,92,246,0.25)' }}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
       onClick={onClick}
@@ -665,7 +685,7 @@ function ProjectCard({ project, onClick, large = false, lang, index }: { project
       <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(13,13,13,0.92) 0%, rgba(13,13,13,0.25) 55%, transparent 100%)' }} />
       <motion.div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'linear-gradient(135deg, rgba(200,169,122,0.1), transparent 42%)' }}
+        style={{ background: 'linear-gradient(135deg, rgba(139,92,246,0.1), transparent 42%)' }}
         animate={{ opacity: hovered ? 1 : 0 }}
         transition={{ duration: 0.4 }}
       />
@@ -677,10 +697,10 @@ function ProjectCard({ project, onClick, large = false, lang, index }: { project
       <div className="absolute inset-0 flex flex-col justify-between p-6 lg:p-8">
         <div className="flex gap-2 flex-wrap">{project.tags.slice(0, 2).map((t) => <Tag key={t}>{t}</Tag>)}</div>
         <div>
-          <div className="font-mono text-[9px] tracking-[0.2em] uppercase mb-2" style={{ color: 'rgba(200,169,122,0.7)' }}>{project.category}</div>
+          <div className="font-mono text-[9px] tracking-[0.2em] uppercase mb-2" style={{ color: 'rgba(139,92,246,0.7)' }}>{project.category}</div>
           <h3 className="font-serif mb-1" style={{ fontSize: large ? 'clamp(2rem, 3vw, 3.5rem)' : 'clamp(1.35rem, 2vw, 2rem)', color: '#F4F1EA', lineHeight: 1.05 }}>{project.title}</h3>
           <div className="font-sans text-xs" style={{ color: 'rgba(244,241,234,0.4)' }}>{project.subtitle}</div>
-          <motion.div className="flex items-center gap-2 mt-4 font-mono text-[10px] tracking-[0.2em] uppercase" style={{ color: '#C8A97A' }} animate={{ opacity: hovered ? 1 : 0, x: hovered ? 0 : -8 }} transition={{ duration: 0.3 }}>
+          <motion.div className="flex items-center gap-2 mt-4 font-mono text-[10px] tracking-[0.2em] uppercase" style={{ color: '#A78BFA' }} animate={{ opacity: hovered ? 1 : 0, x: hovered ? 0 : -8 }} transition={{ duration: 0.3 }}>
             {tx.viewCaseStudy}
           </motion.div>
         </div>
@@ -706,7 +726,7 @@ function WorkPage({ setPage, setActiveProject, lang }: { setPage: (p: Page) => v
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16 items-end">
           <div>
             <FadeUp>
-              <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-6" style={{ color: '#C8A97A' }}>
+              <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-6" style={{ color: '#A78BFA' }}>
                 {tx.workPageTag} — {new Date().getFullYear()}
               </div>
             </FadeUp>
@@ -768,9 +788,9 @@ function WorkPage({ setPage, setActiveProject, lang }: { setPage: (p: Page) => v
                   <button
                     onClick={() => { setPage('contact'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
                     className="font-mono text-[10px] tracking-[0.2em] uppercase px-6 py-3.5 rounded-full self-start transition-all duration-300"
-                    style={{ background: 'rgba(200,169,122,0.08)', border: '1px solid rgba(200,169,122,0.25)', color: '#C8A97A' }}
-                    onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(200,169,122,0.15)' }}
-                    onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(200,169,122,0.08)' }}
+                    style={{ background: 'rgba(139,92,246,0.08)', border: '1px solid rgba(139,92,246,0.25)', color: '#A78BFA' }}
+                    onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(139,92,246,0.15)' }}
+                    onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(139,92,246,0.08)' }}
                   >
                     {tx.ctaBook} →
                   </button>
@@ -804,7 +824,7 @@ function ProjectDetailPage({ projectId, setPage, lang }: { projectId: string; se
         <motion.img src={project.heroImg} alt={project.title} className="w-full h-full object-cover" style={{ scale: heroScale }} />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(13,13,13,0.2) 0%, rgba(13,13,13,0.6) 70%, #0D0D0D 100%)' }} />
         <motion.div className="absolute inset-0 flex flex-col justify-end pb-20 px-8 max-w-[1400px] mx-auto" style={{ opacity: heroOpacity }}>
-          <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-4" style={{ color: '#C8A97A' }}>{project.category}</div>
+          <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-4" style={{ color: '#A78BFA' }}>{project.category}</div>
           <h1 className="font-serif" style={{ fontSize: 'clamp(3rem, 6vw, 5.5rem)', color: '#F4F1EA', lineHeight: 1 }}>{project.title}</h1>
           <div className="font-sans text-base mt-3" style={{ color: 'rgba(244,241,234,0.5)' }}>{project.subtitle} — {project.year}</div>
         </motion.div>
@@ -817,11 +837,11 @@ function ProjectDetailPage({ projectId, setPage, lang }: { projectId: string; se
           </FadeUp>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
             <FadeUp delay={0.1}>
-              <div className="font-mono text-[10px] tracking-[0.25em] uppercase mb-4" style={{ color: '#C8A97A' }}>{tx.projChallenge}</div>
+              <div className="font-mono text-[10px] tracking-[0.25em] uppercase mb-4" style={{ color: '#A78BFA' }}>{tx.projChallenge}</div>
               <p className="font-sans text-sm leading-relaxed" style={{ color: 'rgba(244,241,234,0.55)' }}>{project.challenge}</p>
             </FadeUp>
             <FadeUp delay={0.2}>
-              <div className="font-mono text-[10px] tracking-[0.25em] uppercase mb-4" style={{ color: '#C8A97A' }}>{tx.projSolution}</div>
+              <div className="font-mono text-[10px] tracking-[0.25em] uppercase mb-4" style={{ color: '#A78BFA' }}>{tx.projSolution}</div>
               <p className="font-sans text-sm leading-relaxed" style={{ color: 'rgba(244,241,234,0.55)' }}>{project.solution}</p>
             </FadeUp>
           </div>
@@ -830,7 +850,7 @@ function ProjectDetailPage({ projectId, setPage, lang }: { projectId: string; se
       <section className="py-16 border-t" style={{ borderColor: '#1F1F1F' }}>
         <div className="max-w-[1400px] mx-auto px-8">
           <FadeUp className="mb-14">
-            <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-3" style={{ color: '#C8A97A' }}>{tx.projProcess}</div>
+            <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-3" style={{ color: '#A78BFA' }}>{tx.projProcess}</div>
             <h3 className="font-serif text-3xl" style={{ color: '#F4F1EA' }}>{tx.projProcessTitle}</h3>
           </FadeUp>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -839,7 +859,7 @@ function ProjectDetailPage({ projectId, setPage, lang }: { projectId: string; se
                 <div className="overflow-hidden rounded-xl" style={{ border: '1px solid #1F1F1F', aspectRatio: '4/3' }}>
                   <ZoomCard className="w-full h-full"><img src={img} alt={label} className="w-full h-full object-cover" /></ZoomCard>
                 </div>
-                <div className="font-mono text-[10px] tracking-[0.2em] uppercase mt-3" style={{ color: 'rgba(200,169,122,0.6)' }}>{label}</div>
+                <div className="font-mono text-[10px] tracking-[0.2em] uppercase mt-3" style={{ color: 'rgba(139,92,246,0.6)' }}>{label}</div>
               </FadeUp>
             ))}
           </div>
@@ -849,14 +869,14 @@ function ProjectDetailPage({ projectId, setPage, lang }: { projectId: string; se
         <div className="max-w-[1400px] mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16">
             <FadeUp>
-              <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-4" style={{ color: '#C8A97A' }}>{tx.projTech}</div>
+              <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-4" style={{ color: '#A78BFA' }}>{tx.projTech}</div>
               <h3 className="font-serif text-3xl" style={{ color: '#F4F1EA' }}>{tx.projTechTitle}<br /><em>{tx.projTechTitle2}</em></h3>
             </FadeUp>
             <FadeUp delay={0.15}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {project.techStack.map((item, i) => (
                   <div key={i} className="flex items-center gap-4 px-5 py-4 rounded-xl" style={{ background: '#111111', border: '1px solid #1F1F1F' }}>
-                    <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#C8A97A' }} />
+                    <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#A78BFA' }} />
                     <span className="font-mono text-[11px] tracking-wider" style={{ color: 'rgba(244,241,234,0.65)' }}>{item}</span>
                   </div>
                 ))}
@@ -867,11 +887,11 @@ function ProjectDetailPage({ projectId, setPage, lang }: { projectId: string; se
       </section>
       <section className="py-28 border-t text-center" style={{ borderColor: '#1F1F1F' }}>
         <FadeUp>
-          <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-6" style={{ color: '#C8A97A' }}>{tx.projNext}</div>
+          <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-6" style={{ color: '#A78BFA' }}>{tx.projNext}</div>
           <h2 className="font-serif mb-10" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: '#F4F1EA' }}>{tx.projNextTitle1}<br /><em>{tx.projNextTitle2}</em></h2>
           <div className="flex flex-wrap justify-center gap-4">
-            <button onClick={() => go('work')} className="font-mono text-[11px] tracking-[0.2em] uppercase px-8 py-4 rounded-full transition-all duration-300 border" style={{ borderColor: 'rgba(200,169,122,0.3)', color: '#C8A97A', background: 'rgba(200,169,122,0.04)' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(200,169,122,0.1)' }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(200,169,122,0.04)' }}>{tx.projViewMore}</button>
-            <button onClick={() => go('contact')} className="font-mono text-[11px] tracking-[0.2em] uppercase px-8 py-4 rounded-full transition-all duration-300" style={{ background: '#F4F1EA', color: '#0D0D0D' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#C8A97A' }} onMouseLeave={(e) => { e.currentTarget.style.background = '#F4F1EA' }}>{tx.projStart}</button>
+            <button onClick={() => go('work')} className="font-mono text-[11px] tracking-[0.2em] uppercase px-8 py-4 rounded-full transition-all duration-300 border" style={{ borderColor: 'rgba(139,92,246,0.3)', color: '#A78BFA', background: 'rgba(139,92,246,0.04)' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(139,92,246,0.1)' }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(139,92,246,0.04)' }}>{tx.projViewMore}</button>
+            <button onClick={() => go('contact')} className="font-mono text-[11px] tracking-[0.2em] uppercase px-8 py-4 rounded-full transition-all duration-300" style={{ background: '#F4F1EA', color: '#0D0D0D' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#A78BFA' }} onMouseLeave={(e) => { e.currentTarget.style.background = '#F4F1EA' }}>{tx.projStart}</button>
           </div>
         </FadeUp>
       </section>
@@ -910,7 +930,7 @@ function ServicesPage({ setPage, lang }: { setPage: (p: Page) => void; lang: Lan
       {/* Page header */}
       <div className="max-w-[1400px] mx-auto px-8 pt-16 pb-20 text-center">
         <FadeUp>
-          <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-6" style={{ color: '#C8A97A' }}>{tx.svcWhat}</div>
+          <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-6" style={{ color: '#A78BFA' }}>{tx.svcWhat}</div>
         </FadeUp>
         <h1 className="font-serif" style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)', color: '#F4F1EA', lineHeight: 0.95 }}>
           <SplitHeadline text={tx.svcH1} />
@@ -931,7 +951,7 @@ function ServicesPage({ setPage, lang }: { setPage: (p: Page) => void; lang: Lan
             <div className="flex flex-col justify-between h-full px-12 py-16 lg:py-20 order-2 lg:order-1" style={{ background: '#0D0D0D' }}>
               {/* Progress bar */}
               <div className="relative h-px" style={{ background: 'rgba(31,31,31,0.8)' }}>
-                <motion.div className="absolute left-0 top-0 h-full" style={{ width: progressBar, background: '#C8A97A' }} />
+                <motion.div className="absolute left-0 top-0 h-full" style={{ width: progressBar, background: '#A78BFA' }} />
               </div>
 
               {/* Active service detail */}
@@ -944,7 +964,7 @@ function ServicesPage({ setPage, lang }: { setPage: (p: Page) => void; lang: Lan
                   transition={{ duration: 0.6, ease: EASE }}
                   className="flex flex-col gap-6 flex-1 justify-center"
                 >
-                  <div className="font-serif" style={{ fontSize: 'clamp(5rem, 8vw, 7rem)', color: 'rgba(200,169,122,0.1)', lineHeight: 1 }}>
+                  <div className="font-serif" style={{ fontSize: 'clamp(5rem, 8vw, 7rem)', color: 'rgba(139,92,246,0.1)', lineHeight: 1 }}>
                     {services[activeService].n}
                   </div>
                   <h2
@@ -970,14 +990,14 @@ function ServicesPage({ setPage, lang }: { setPage: (p: Page) => void; lang: Lan
                     className="flex items-center gap-4 py-4 border-t"
                     style={{ borderColor: 'rgba(31,31,31,0.6)', opacity: activeService === i ? 1 : 0.35, transition: 'opacity 0.4s' }}
                   >
-                    <div className="w-1.5 h-1.5 rounded-full flex-shrink-0 transition-all duration-400" style={{ background: activeService === i ? '#C8A97A' : 'rgba(200,169,122,0.25)' }} />
+                    <div className="w-1.5 h-1.5 rounded-full flex-shrink-0 transition-all duration-400" style={{ background: activeService === i ? '#A78BFA' : 'rgba(139,92,246,0.25)' }} />
                     <span className="font-mono text-[10px] tracking-[0.2em] uppercase" style={{ color: activeService === i ? '#F4F1EA' : 'rgba(244,241,234,0.35)' }}>
                       {svc.n} — {svc.title.split('\n')[0]}
                     </span>
                   </div>
                 ))}
                 <motion.div className="flex items-center gap-3 mt-3" animate={{ opacity: activeService === 2 ? 0 : 0.4 }} transition={{ duration: 0.4 }}>
-                  <div className="w-px h-6" style={{ background: 'rgba(200,169,122,0.4)' }} />
+                  <div className="w-px h-6" style={{ background: 'rgba(139,92,246,0.4)' }} />
                   <span className="font-mono text-[9px] tracking-[0.3em] uppercase" style={{ color: 'rgba(244,241,234,0.4)' }}>{tx.svcScrollHint}</span>
                 </motion.div>
               </div>
@@ -1025,7 +1045,7 @@ function AboutPage({ setPage, lang }: { setPage: (p: Page) => void; lang: Lang }
   return (
     <div style={{ background: '#0D0D0D', paddingTop: '100px' }}>
       <div className="max-w-[1400px] mx-auto px-8 pt-16 pb-24">
-        <FadeUp><div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-6" style={{ color: '#C8A97A' }}>{tx.aboutTag}</div></FadeUp>
+        <FadeUp><div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-6" style={{ color: '#A78BFA' }}>{tx.aboutTag}</div></FadeUp>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16 items-end">
           <h1 className="font-serif" style={{ fontSize: 'clamp(3rem, 5.5vw, 5rem)', color: '#F4F1EA', lineHeight: 0.95 }}>
             <SplitHeadline text={tx.aboutH1} /><br />
@@ -1045,7 +1065,7 @@ function AboutPage({ setPage, lang }: { setPage: (p: Page) => void; lang: Lang }
       </FadeUp>
       <div className="max-w-[1400px] mx-auto px-8 pb-28">
         <FadeUp className="mb-16">
-          <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-4" style={{ color: '#C8A97A' }}>{tx.aboutPrinciplesTag}</div>
+          <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-4" style={{ color: '#A78BFA' }}>{tx.aboutPrinciplesTag}</div>
           <h2 className="font-serif text-4xl" style={{ color: '#F4F1EA' }}>{tx.aboutPrinciplesTitle}</h2>
         </FadeUp>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
@@ -1083,7 +1103,7 @@ function FounderProfile({ founder, tx }: {
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: EASE }}
       >
-        <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-4" style={{ color: '#C8A97A' }}>{tx.teamTag}</div>
+        <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-4" style={{ color: '#A78BFA' }}>{tx.teamTag}</div>
         <h2 className="font-serif" style={{ color: '#F4F1EA' }}>{tx.teamTitle1}<br /><em>{tx.teamTitle2}</em></h2>
       </motion.div>
 
@@ -1182,7 +1202,7 @@ function ContactPage({ setPage, lang }: { setPage: (p: Page) => void; lang: Lang
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-20">
           <div>
             <FadeUp>
-              <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-6" style={{ color: '#C8A97A' }}>{tx.contactTag}</div>
+              <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-6" style={{ color: '#A78BFA' }}>{tx.contactTag}</div>
               <h1 className="font-serif mb-8" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', color: '#F4F1EA', lineHeight: 0.95 }}>
                 <SplitHeadline text={tx.contactH1} /><br />
                 <SplitHeadline text={tx.contactH2} delay={0.1} /><br />
@@ -1214,12 +1234,12 @@ function ContactPage({ setPage, lang }: { setPage: (p: Page) => void; lang: Lang
                   {([['name', tx.formName, 'text', 'Joren Moorman'], ['email', tx.formEmail, 'email', 'hello@brand.com'], ['company', tx.formCompany, 'text', 'Nike Global']] as [string, string, string, string][]).map(([id, label, type, ph]) => (
                     <div key={id}>
                       <label className="font-mono text-[9px] tracking-[0.25em] uppercase block mb-2" style={{ color: '#7A7265' }}>{label}</label>
-                      <input type={type} placeholder={ph} value={form[id as keyof typeof form]} onChange={(e) => setForm({ ...form, [id]: e.target.value })} required className="w-full px-4 py-3.5 rounded-xl font-sans text-sm outline-none" style={{ background: '#161616', border: '1px solid #2A2A2A', color: '#F4F1EA' }} onFocus={(e) => { e.currentTarget.style.borderColor = 'rgba(200,169,122,0.4)' }} onBlur={(e) => { e.currentTarget.style.borderColor = '#2A2A2A' }} />
+                      <input type={type} placeholder={ph} value={form[id as keyof typeof form]} onChange={(e) => setForm({ ...form, [id]: e.target.value })} required className="w-full px-4 py-3.5 rounded-xl font-sans text-sm outline-none" style={{ background: '#161616', border: '1px solid #2A2A2A', color: '#F4F1EA' }} onFocus={(e) => { e.currentTarget.style.borderColor = 'rgba(139,92,246,0.4)' }} onBlur={(e) => { e.currentTarget.style.borderColor = '#2A2A2A' }} />
                     </div>
                   ))}
                   <div>
                     <label className="font-mono text-[9px] tracking-[0.25em] uppercase block mb-2" style={{ color: '#7A7265' }}>{tx.formBudget}</label>
-                    <select value={form.budget} onChange={(e) => setForm({ ...form, budget: e.target.value })} className="w-full px-4 py-3.5 rounded-xl font-sans text-sm outline-none cursor-pointer" style={{ background: '#161616', border: '1px solid #2A2A2A', color: form.budget ? '#F4F1EA' : '#7A7265' }} onFocus={(e) => { e.currentTarget.style.borderColor = 'rgba(200,169,122,0.4)' }} onBlur={(e) => { e.currentTarget.style.borderColor = '#2A2A2A' }}>
+                    <select value={form.budget} onChange={(e) => setForm({ ...form, budget: e.target.value })} className="w-full px-4 py-3.5 rounded-xl font-sans text-sm outline-none cursor-pointer" style={{ background: '#161616', border: '1px solid #2A2A2A', color: form.budget ? '#F4F1EA' : '#7A7265' }} onFocus={(e) => { e.currentTarget.style.borderColor = 'rgba(139,92,246,0.4)' }} onBlur={(e) => { e.currentTarget.style.borderColor = '#2A2A2A' }}>
                       <option value="" style={{ background: '#161616' }}>{tx.formBudgetPh}</option>
                       <option value="25k-50k" style={{ background: '#161616' }}>€25.000 — €50.000</option>
                       <option value="50k-150k" style={{ background: '#161616' }}>€50.000 — €150.000</option>
@@ -1229,16 +1249,16 @@ function ContactPage({ setPage, lang }: { setPage: (p: Page) => void; lang: Lang
                   </div>
                   <div>
                     <label className="font-mono text-[9px] tracking-[0.25em] uppercase block mb-2" style={{ color: '#7A7265' }}>{tx.formBrief}</label>
-                    <textarea rows={4} placeholder={tx.formBriefPh} value={form.brief} onChange={(e) => setForm({ ...form, brief: e.target.value })} className="w-full px-4 py-3.5 rounded-xl font-sans text-sm outline-none resize-none" style={{ background: '#161616', border: '1px solid #2A2A2A', color: '#F4F1EA' }} onFocus={(e) => { e.currentTarget.style.borderColor = 'rgba(200,169,122,0.4)' }} onBlur={(e) => { e.currentTarget.style.borderColor = '#2A2A2A' }} />
+                    <textarea rows={4} placeholder={tx.formBriefPh} value={form.brief} onChange={(e) => setForm({ ...form, brief: e.target.value })} className="w-full px-4 py-3.5 rounded-xl font-sans text-sm outline-none resize-none" style={{ background: '#161616', border: '1px solid #2A2A2A', color: '#F4F1EA' }} onFocus={(e) => { e.currentTarget.style.borderColor = 'rgba(139,92,246,0.4)' }} onBlur={(e) => { e.currentTarget.style.borderColor = '#2A2A2A' }} />
                   </div>
-                  <button type="submit" className="w-full py-4 rounded-xl font-mono text-[11px] tracking-[0.25em] uppercase transition-all duration-300 mt-2" style={{ background: '#F4F1EA', color: '#0D0D0D' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#C8A97A' }} onMouseLeave={(e) => { e.currentTarget.style.background = '#F4F1EA' }}>{tx.formSend}</button>
+                  <button type="submit" className="w-full py-4 rounded-xl font-mono text-[11px] tracking-[0.25em] uppercase transition-all duration-300 mt-2" style={{ background: '#F4F1EA', color: '#0D0D0D' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#A78BFA' }} onMouseLeave={(e) => { e.currentTarget.style.background = '#F4F1EA' }}>{tx.formSend}</button>
                 </motion.form>
               ) : (
-                <motion.div key="success" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="flex flex-col items-center justify-center p-16 rounded-2xl text-center" style={{ background: '#111111', border: '1px solid rgba(200,169,122,0.2)', minHeight: '500px' }}>
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center mb-8" style={{ background: 'rgba(200,169,122,0.1)', border: '1px solid rgba(200,169,122,0.3)' }}>
-                    <span style={{ color: '#C8A97A', fontSize: '1.5rem' }}>✓</span>
+                <motion.div key="success" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="flex flex-col items-center justify-center p-16 rounded-2xl text-center" style={{ background: '#111111', border: '1px solid rgba(139,92,246,0.2)', minHeight: '500px' }}>
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center mb-8" style={{ background: 'rgba(139,92,246,0.1)', border: '1px solid rgba(139,92,246,0.3)' }}>
+                    <span style={{ color: '#A78BFA', fontSize: '1.5rem' }}>✓</span>
                   </div>
-                  <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-4" style={{ color: '#C8A97A' }}>{tx.formSuccessTag}</div>
+                  <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-4" style={{ color: '#A78BFA' }}>{tx.formSuccessTag}</div>
                   <h3 className="font-serif text-3xl mb-4" style={{ color: '#F4F1EA' }}>{tx.formSuccessTitle}</h3>
                   <p className="font-sans text-sm leading-relaxed" style={{ color: 'rgba(244,241,234,0.45)', maxWidth: '300px' }}>{tx.formSuccessDesc}</p>
                 </motion.div>
@@ -1273,7 +1293,7 @@ function CTASection({ setPage, lang }: { setPage: (p: Page) => void; lang: Lang 
           <FadeUp delay={0.15}>
             <div className="flex flex-col gap-3">
               <input type="email" placeholder={tx.ctaPlaceholder} value={email} onChange={(e) => setEmail(e.target.value)} className="w-full px-6 py-4 rounded-2xl font-sans text-sm outline-none" style={{ background: 'rgba(13,13,13,0.06)', border: '1px solid rgba(13,13,13,0.12)', color: '#0D0D0D' }} onFocus={(e) => { e.currentTarget.style.borderColor = 'rgba(13,13,13,0.3)' }} onBlur={(e) => { e.currentTarget.style.borderColor = 'rgba(13,13,13,0.12)' }} />
-              <button onClick={() => go('contact')} className="w-full py-4 rounded-2xl font-mono text-[11px] tracking-[0.25em] uppercase transition-all duration-300" style={{ background: '#0D0D0D', color: '#F4F1EA' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#C8A97A'; e.currentTarget.style.color = '#0D0D0D' }} onMouseLeave={(e) => { e.currentTarget.style.background = '#0D0D0D'; e.currentTarget.style.color = '#F4F1EA' }}>{tx.ctaBtn}</button>
+              <button onClick={() => go('contact')} className="w-full py-4 rounded-2xl font-mono text-[11px] tracking-[0.25em] uppercase transition-all duration-300" style={{ background: '#0D0D0D', color: '#F4F1EA' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#A78BFA'; e.currentTarget.style.color = '#0D0D0D' }} onMouseLeave={(e) => { e.currentTarget.style.background = '#0D0D0D'; e.currentTarget.style.color = '#F4F1EA' }}>{tx.ctaBtn}</button>
             </div>
           </FadeUp>
         </div>
