@@ -351,11 +351,13 @@ function Nav({ page, setPage, lang, setLang }: { page: Page; setPage: (p: Page) 
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: EASE }}
     >
-      <button onClick={() => go('home')} className="flex items-center gap-3">
-        <div className="w-8 h-8 rounded-md overflow-hidden flex items-center justify-center" style={{ background: '#F4F1EA' }}>
-          <img src={logoSrc} alt="Moorman Creative" className="w-6 h-6 object-contain" />
-        </div>
-        <span className="font-sans text-xs tracking-[0.18em] uppercase hidden sm:block" style={{ color: '#F4F1EA' }}>Moorman Creative</span>
+      <button onClick={() => go('home')} className="flex items-center" aria-label="Moorman Creative home">
+        <img
+          src={logoSrc}
+          alt="Moorman Creative"
+          className="h-7 md:h-8 w-auto object-contain"
+          style={{ filter: 'invert(1)', opacity: 0.94 }}
+        />
       </button>
 
       <div className="hidden md:flex items-center gap-8">
@@ -518,91 +520,36 @@ function HomePage({ setPage, setActiveProject, lang }: { setPage: (p: Page) => v
       {/* ── FULL-BLEED HERO ── */}
       <section ref={heroRef} className="relative overflow-hidden" style={{ height: '100vh' }}>
         <motion.div className="absolute inset-0 w-full" style={{ y: heroBgY, scale: 1.12, transformOrigin: 'center center' }}>
-          <motion.video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            disablePictureInPicture
-            onCanPlay={(event) => {
-              event.currentTarget.play().catch(() => undefined)
-            }}
-            poster="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=1600&q=75&auto=format&fit=crop"
-            aria-label="Abstract purple and blue digital particle waves"
-            className="hero-ai-video w-full h-full object-cover"
-            initial={{ scale: 1.08 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 2.5, ease: EASE }}
-          >
-            <source src="https://videos.pexels.com/video-files/29306492/12637575_1920_1080_30fps.mp4" type="video/mp4" />
-          </motion.video>
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(8,5,16,0.62) 0%, rgba(13,8,28,0.18) 38%, rgba(12,7,24,0.3) 62%, rgba(8,5,16,0.9) 100%)' }} />
-          <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 90% 65% at 50% 48%, rgba(168,85,247,0.1) 0%, transparent 46%, rgba(5,3,10,0.58) 100%)' }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(145deg, #07050d 0%, #0d0917 48%, #09060f 100%)' }} />
+          <motion.div
+            className="absolute inset-[-20%]"
+            style={{ background: 'radial-gradient(circle at 36% 44%, rgba(124,58,237,0.2) 0%, rgba(124,58,237,0.05) 24%, transparent 52%)' }}
+            animate={{ x: ['-3%', '4%', '-3%'], y: ['-2%', '3%', '-2%'], scale: [1, 1.08, 1] }}
+            transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
+          />
+          <motion.div
+            className="absolute inset-[-16%]"
+            style={{ background: 'radial-gradient(circle at 70% 55%, rgba(232,121,249,0.1) 0%, rgba(168,85,247,0.04) 25%, transparent 50%)' }}
+            animate={{ x: ['3%', '-4%', '3%'], y: ['3%', '-2%', '3%'], scale: [1.06, 0.98, 1.06] }}
+            transition={{ duration: 17, repeat: Infinity, ease: 'easeInOut' }}
+          />
+          <div className="hero-logo-grid absolute inset-0" />
+          <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 75% 60% at 50% 50%, transparent 24%, rgba(5,3,9,0.72) 100%)' }} />
         </motion.div>
 
-        {/* Wordmark overlay */}
+        {/* Logo overlay */}
         <motion.div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none" style={{ opacity: heroTextOpacity, y: heroTextY }}>
-          <div className="w-full overflow-hidden px-4 md:px-8 text-center">
-            <motion.h1
-              className="font-serif whitespace-nowrap"
-              style={{
-                fontSize: 'clamp(2.55rem, 9vw, 9rem)',
-                lineHeight: 0.9,
-                letterSpacing: '-0.045em',
-                backgroundImage: 'linear-gradient(105deg, #F4F1EA 8%, #DDD6FE 42%, #A78BFA 72%, #F0ABFC 100%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                color: 'transparent',
-                filter: 'drop-shadow(0 12px 38px rgba(76,29,149,0.28))',
-              }}
-              initial={{ y: '115%', opacity: 0, filter: 'blur(10px)' }}
-              animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
-              transition={{ duration: 1.35, delay: 0.15, ease: EASE }}
-            >
-              Moorman Creative
-            </motion.h1>
+          <div className="w-full overflow-hidden px-8 text-center">
+            <motion.img
+              src={logoSrc}
+              alt="Moorman Creative"
+              className="hero-logo-image mx-auto w-full max-w-[760px]"
+              initial={{ y: 40, opacity: 0, scale: 0.94 }}
+              animate={{ y: 0, opacity: 1, scale: 1 }}
+              transition={{ duration: 1.4, delay: 0.15, ease: EASE }}
+            />
           </div>
         </motion.div>
-      </section>
-
-      {/* ── HEADLINE BELOW HERO ── */}
-      <section className="max-w-[1400px] mx-auto px-8 py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16 items-start">
-          <div>
-            <FadeUp>
-              <div className="font-mono text-[10px] tracking-[0.3em] uppercase mb-8" style={{ color: '#A78BFA' }}>{tx.headlineTag}</div>
-            </FadeUp>
-            <h2 className="font-serif" style={{ fontSize: 'clamp(2.8rem, 5.5vw, 5rem)', color: '#F4F1EA', lineHeight: 0.95, letterSpacing: '-0.01em' }}>
-              <SplitHeadline text={tx.headline1} delay={0} />
-              <br />
-              <SplitHeadline text={tx.headline2} delay={0.1} className="font-serif italic" />
-              <br />
-              <SplitHeadline text={tx.headline3} delay={0.2} />
-            </h2>
-          </div>
-          <div className="flex flex-col gap-10 lg:pt-20">
-            <FadeUp delay={0.3}>
-              <p className="font-sans text-base leading-relaxed" style={{ color: 'rgba(244,241,234,0.5)', maxWidth: '420px' }}>{tx.heroDesc}</p>
-            </FadeUp>
-            <FadeUp delay={0.4}>
-              <div className="flex flex-wrap gap-4">
-                <button onClick={() => go('work')} className="font-mono text-[11px] tracking-[0.2em] uppercase px-7 py-4 rounded-full transition-all duration-300" style={{ background: '#F4F1EA', color: '#0D0D0D' }} onMouseEnter={(e) => { e.currentTarget.style.background = '#A78BFA' }} onMouseLeave={(e) => { e.currentTarget.style.background = '#F4F1EA' }}>{tx.ctaWork}</button>
-                <button onClick={() => go('contact')} className="font-mono text-[11px] tracking-[0.2em] uppercase px-7 py-4 rounded-full transition-all duration-300 border" style={{ borderColor: 'rgba(244,241,234,0.2)', color: '#F4F1EA', background: 'transparent' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(244,241,234,0.5)' }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(244,241,234,0.2)' }}>{tx.ctaBook}</button>
-              </div>
-            </FadeUp>
-            <FadeUp delay={0.5}>
-              <div className="grid grid-cols-3 gap-4 pt-8 border-t" style={{ borderColor: 'rgba(31,31,31,0.8)' }}>
-                {([['stat1n', 'stat1l'], ['stat2n', 'stat2l'], ['stat3n', 'stat3l']] as [TKeys, TKeys][]).map(([nk, lk]) => (
-                  <div key={nk}>
-                    <div className="font-serif text-3xl" style={{ color: '#F4F1EA' }}>{tx[nk]}</div>
-                    <div className="font-mono text-[10px] tracking-wider mt-1 leading-tight whitespace-pre-line" style={{ color: '#7A7265' }}>{tx[lk]}</div>
-                  </div>
-                ))}
-              </div>
-            </FadeUp>
-          </div>
-        </div>
       </section>
 
       {/* ── TRUST BAR ── */}

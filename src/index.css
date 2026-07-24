@@ -60,15 +60,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.hero-ai-video {
-  background: #080510;
-  filter: saturate(0.9) contrast(1.08) brightness(0.78);
+.hero-logo-image {
+  filter: invert(1) drop-shadow(0 20px 60px rgba(124, 58, 237, 0.22));
+  opacity: 0.94;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-ai-video {
-    display: none;
-  }
+.hero-logo-grid {
+  opacity: 0.18;
+  background-image:
+    linear-gradient(rgba(167, 139, 250, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(167, 139, 250, 0.08) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at center, black 0%, transparent 68%);
+  -webkit-mask-image: radial-gradient(circle at center, black 0%, transparent 68%);
 }
 
 /* Hide scrollbar but allow scrolling */
