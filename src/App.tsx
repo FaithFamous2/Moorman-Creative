@@ -81,7 +81,7 @@ const T = {
     p2Title: 'Radical Exclusivity', p2Desc: "We don't publish our models, share our pipelines, or license our systems to competitors. What we build for you stays yours.",
     p3Title: 'Honest Collaboration', p3Desc: "We charge for outcomes, not hours. Our clients know exactly what they're getting before we start, and they always get more.",
     teamTag: 'FOUNDER', teamTitle1: 'One vision,', teamTitle2: 'built without limits.',
-    teamBio: 'Joren leads every engagement from first conversation to final frame, combining twelve years of cinematic direction with a deep understanding of generative technology. His practice is built on a simple belief: AI should expand creative ambition, never replace creative judgment.',
+    teamBio: 'Laurent leads every engagement from first conversation to final frame, combining twelve years of cinematic direction with a deep understanding of generative technology. His practice is built on a simple belief: AI should expand creative ambition, never replace creative judgment.',
     // Contact
     contactTag: 'GET IN TOUCH',
     contactH1: "Let's create", contactH2: 'something', contactH3: 'unforgettable.',
@@ -167,7 +167,7 @@ const T = {
     p2Title: 'Radicale Exclusiviteit', p2Desc: 'Wij publiceren onze modellen niet, delen onze pipelines niet en licentiëren onze systemen niet aan concurrenten. Wat wij voor u bouwen, blijft van u.',
     p3Title: 'Eerlijke Samenwerking', p3Desc: 'Wij rekenen voor resultaten, niet voor uren. Onze klanten weten precies wat ze krijgen voordat we beginnen, en ze krijgen altijd meer.',
     teamTag: 'OPRICHTER', teamTitle1: 'Eén visie,', teamTitle2: 'gebouwd zonder grenzen.',
-    teamBio: 'Joren leidt elke samenwerking van het eerste gesprek tot het laatste frame en combineert twaalf jaar cinematografische regie met diepgaande kennis van generatieve technologie. Zijn praktijk is gebouwd op één overtuiging: AI moet creatieve ambitie vergroten, nooit creatief oordeel vervangen.',
+    teamBio: 'Laurent leidt elke samenwerking van het eerste gesprek tot het laatste frame en combineert twaalf jaar cinematografische regie met diepgaande kennis van generatieve technologie. Zijn praktijk is gebouwd op één overtuiging: AI moet creatieve ambitie vergroten, nooit creatief oordeel vervangen.',
     // Contact
     contactTag: 'NEEM CONTACT OP',
     contactH1: 'Laten we iets', contactH2: 'onvergetelijks', contactH3: 'creëren.',
@@ -995,7 +995,7 @@ function ServicesPage({ setPage, lang }: { setPage: (p: Page) => void; lang: Lan
 function AboutPage({ setPage, lang }: { setPage: (p: Page) => void; lang: Lang }) {
   const tx = T[lang]
   const founder = {
-    name: 'Joren Moorman',
+    name: 'Laurent Moorman',
     role: lang === 'en' ? 'Founder & Creative Director' : 'Oprichter & Creatief Directeur',
     img: 'https://images.unsplash.com/photo-1770062421988-7929b4748e29?w=900&q=82&auto=format&fit=crop',
   }
@@ -1189,7 +1189,7 @@ function ContactPage({ setPage, lang }: { setPage: (p: Page) => void; lang: Lang
             <AnimatePresence mode="wait">
               {!sent ? (
                 <motion.form key="form" onSubmit={handle} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex flex-col gap-5 p-10 rounded-2xl" style={{ background: '#111111', border: '1px solid #1F1F1F' }}>
-                  {([['name', tx.formName, 'text', 'Joren Moorman'], ['email', tx.formEmail, 'email', 'hello@brand.com'], ['company', tx.formCompany, 'text', 'Nike Global']] as [string, string, string, string][]).map(([id, label, type, ph]) => (
+                  {([['name', tx.formName, 'text', 'Laurent Moorman'], ['email', tx.formEmail, 'email', 'hello@brand.com'], ['company', tx.formCompany, 'text', 'Nike Global']] as [string, string, string, string][]).map(([id, label, type, ph]) => (
                     <div key={id}>
                       <label className="font-mono text-[9px] tracking-[0.25em] uppercase block mb-2" style={{ color: '#7A7265' }}>{label}</label>
                       <input type={type} placeholder={ph} value={form[id as keyof typeof form]} onChange={(e) => setForm({ ...form, [id]: e.target.value })} required className="w-full px-4 py-3.5 rounded-xl font-sans text-sm outline-none" style={{ background: '#161616', border: '1px solid #2A2A2A', color: '#F4F1EA' }} onFocus={(e) => { e.currentTarget.style.borderColor = 'rgba(139,92,246,0.4)' }} onBlur={(e) => { e.currentTarget.style.borderColor = '#2A2A2A' }} />
