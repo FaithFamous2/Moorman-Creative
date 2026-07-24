@@ -553,13 +553,24 @@ function HomePage({ setPage, setActiveProject, lang }: { setPage: (p: Page) => v
       </section>
 
       {/* ── TRUST BAR ── */}
-      <section className="py-14 border-y" style={{ borderColor: '#1F1F1F' }}>
+      <section className="trust-marquee-section border-y" style={{ borderColor: '#1F1F1F' }}>
         <FadeUp>
-          <div className="max-w-[1400px] mx-auto px-8">
-            <div className="font-mono text-[9px] tracking-[0.3em] uppercase text-center mb-10" style={{ color: 'rgba(244,241,234,0.2)' }}>{tx.trustLabel}</div>
-            <div className="flex flex-wrap items-center justify-center gap-x-14 gap-y-5">
-              {CLIENTS.map((c) => (
-                <span key={c} className="font-mono text-xs tracking-[0.2em]" style={{ color: 'rgba(244,241,234,0.13)' }}>{c}</span>
+          <div className="trust-marquee-heading">
+            <span className="trust-marquee-line" />
+            <div className="font-mono uppercase">{tx.trustLabel}</div>
+            <span className="trust-marquee-line" />
+          </div>
+          <div className="trust-marquee" aria-label={tx.trustLabel}>
+            <div className="trust-marquee-track">
+              {[0, 1].map((group) => (
+                <div className="trust-marquee-group" aria-hidden={group === 1} key={group}>
+                  {CLIENTS.map((client) => (
+                    <span className="trust-marquee-client" key={`${group}-${client}`}>
+                      {client}
+                      <i aria-hidden="true" />
+                    </span>
+                  ))}
+                </div>
               ))}
             </div>
           </div>
